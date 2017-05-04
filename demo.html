@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./core.css">
+    <link rel="stylesheet" type="text/css" href="./distribution.css">
+  </head>
+  <body>
+    <p>To adjust the mass distribution, scroll your mouse on any bar</p>
+    <svg id="myDistr"></svg>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="./external/snap.svg.js"></script>
+    <script src="./distribution.js"></script>
+    <script>
+      $(() => {
+
+        Distr.create('myDistr', {
+          items:  ['Pop', 'Jazz', 'R&B', 'Rap', 'Indie', 'Opera', 'Musical', 'Other'],
+          masses: [ 15,     5,     10,     0,     10,      15,       40,        5 ],
+          totalHeight: 300,
+          barWidth: 30,
+          barSpacing: 20
+        })
+
+      });
+    </script>
+  </body>
+</html>
